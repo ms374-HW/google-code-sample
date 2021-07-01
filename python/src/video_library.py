@@ -31,10 +31,6 @@ class VideoLibrary:
         """Returns all available video information from the video library."""
         return list(self._videos.values())
 
-    def get_video_dict(self):
-        """Returns all available video information as the dictionary from the video library."""
-        return list(self._videos)
-
     def get_video(self, video_id):
         """Returns the video object (title, url, tags) from the video library.
 
