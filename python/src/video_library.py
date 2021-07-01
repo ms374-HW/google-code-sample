@@ -18,8 +18,7 @@ class VideoLibrary:
         """The VideoLibrary class is initialized."""
         self._videos = {}
         with open(Path(__file__).parent / "videos.txt") as video_file:
-            reader = _csv_reader_with_strip(
-                csv.reader(video_file, delimiter="|"))
+            reader = _csv_reader_with_strip(csv.reader(video_file, delimiter="|"))
             for video_info in reader:
                 title, url, tags = video_info
                 self._videos[url] = Video(
@@ -31,6 +30,10 @@ class VideoLibrary:
     def get_all_videos(self):
         """Returns all available video information from the video library."""
         return list(self._videos.values())
+
+    def get_video_dict(self):
+        """Returns all available video information as the dictionary from the video library."""
+        return list(self._videos)
 
     def get_video(self, video_id):
         """Returns the video object (title, url, tags) from the video library.

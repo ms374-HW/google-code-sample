@@ -133,7 +133,7 @@ def test_flag_video_show_all_videos(capfd):
     assert "Video about nothing (nothing_video_id) []" in lines[6]
 
 
-@mock.patch('builtins.input', lambda *args: 'No')
+@mock.patch('src.video_player.input', lambda *args: 'No')
 def test_flag_video_search_videos(capfd):
     player = VideoPlayer()
     player.flag_video("amazing_cats_video_id", "dont_like_cats")
@@ -152,7 +152,7 @@ def test_flag_video_search_videos(capfd):
             "it's a no.") in lines[4]
 
 
-@mock.patch('builtins.input', lambda *args: 'No')
+@mock.patch('src.video_player.input', lambda *args: 'No')
 def test_flag_video_search_videos_with_tag(capfd):
     player = VideoPlayer()
     player.flag_video("amazing_cats_video_id", "dont_like_cats")
